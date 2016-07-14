@@ -69,8 +69,9 @@ public class FetchEurUsd extends Thread {
         StringBuilder sb = new StringBuilder();
         int i = 1;
         String text;
+        Scanner scanner = new Scanner(new URL("http://62.75.142.111/eurusd.php");
         try {
-            Scanner scanner = new Scanner(new URL("http://62.75.142.111/eurusd.php").openStream());
+            scanner.openStream());
             while (scanner.hasNextLine()) {
                 //System.out.println(scanner.nextLine());
                 if(i == 2){
