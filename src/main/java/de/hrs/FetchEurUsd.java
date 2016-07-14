@@ -84,11 +84,12 @@ public class FetchEurUsd extends Thread {
                 scanner.nextLine();
                 i++;
             }
-            scanner.close();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }finally{
+            scanner.close();
         }
         //return sb.toString();
         return Double.parseDouble(sb.substring(sb.indexOf("<body>")+6, sb.indexOf("\n")));
