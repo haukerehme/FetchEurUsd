@@ -7,7 +7,6 @@ import de.hrs.socketcontroller.RechnerSchnittstelle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -69,8 +68,10 @@ public class FetchEurUsd extends Thread {
     public double getEurUsdWert() throws MalformedURLException {
         StringBuilder sb = new StringBuilder();
         int i = 1;
+        String text;
+        Scanner scanner = new Scanner(new URL("http://62.75.142.111/eurusd.php");
         try {
-            Scanner scanner = new Scanner(new URL("http://62.75.142.111/eurusd.php").openStream());
+            scanner.openStream());
             while (scanner.hasNextLine()) {
                 if (i == 2) {
                     sb.append(scanner.nextLine() + "\n");
@@ -79,11 +80,12 @@ public class FetchEurUsd extends Thread {
                 scanner.nextLine();
                 i++;
             }
-            scanner.close();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }finally{
+            scanner.close();
         }
         double result = Double.parseDouble(sb.substring(sb.indexOf("<body>") + 6, sb.indexOf("\n")));
         if (result != 0) {
