@@ -3,7 +3,6 @@ package de.hrs.socketcontroller;
 import de.hrs.model.Eurusd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Inet4Address;

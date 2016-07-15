@@ -22,10 +22,5 @@
         <property name="password">
             <value>43mitmilch</value>
         </property>
-
-
     </bean>
-
-
-
 </beans>

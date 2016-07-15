@@ -45,7 +45,6 @@ public class EurUsdDao {
     }
 
     public void saveWert(Eurusd eurusd){
-        //template.execute("Insert into eurusd (zeit,wert) values ('"+eurusd.getZeit()+"',"+eurusd.getValue()+")");
         Object[] params = new Object[] { eurusd.getZeit(), eurusd.getValue()};
         int[] types = new int[] { Types.TIMESTAMP, Types.DOUBLE};
         int row = template.update(insertSql, params, types);

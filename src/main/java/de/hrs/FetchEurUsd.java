@@ -2,7 +2,6 @@ package de.hrs;
 
 import de.hrs.dao.EurUsdDao;
 import de.hrs.model.Eurusd;
-import de.hrs.repository.EurUsdRepository;
 import de.hrs.socketcontroller.RechnerSchnittstelle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
