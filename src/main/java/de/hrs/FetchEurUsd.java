@@ -86,7 +86,8 @@ public class FetchEurUsd extends Thread {
         }finally{
             scanner.close();
         }
-        double result = Double.parseDouble(sb.substring(sb.indexOf("<body>") + 6, sb.indexOf("\n")));
+
+        double result = Double.parseDouble(sb.substring(sb.indexOf("<body>") + 6, sb.indexOf("</body>")));
         if (result != 0) {
             log.info("Get Live-Value {}", result);
             return result;
